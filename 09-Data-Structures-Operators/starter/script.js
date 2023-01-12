@@ -9,14 +9,10 @@ const button = document.querySelector('button');
 let galochka = ' ';
 function convertUnderToUpper(str) {
   const rows = str.split('\n');
-  let arr = []; 
-  rows.forEach(element => arr.push(element.length));
-  let maxLength = Math.max(...arr);
-  for(let row of rows) {
-    galochka += '✅';
+  for(let [i, row] of rows.entries()) {
     const [first, second] =  row.toLowerCase().trim().split('_');
     const result = first + second.replace(second[0], second[0].toUpperCase());
-    console.log(result.padEnd(maxLength+ galochka);
+    console.log(result.padEnd(20) + '✅'.repeat(i+1));
   }
 }
 
